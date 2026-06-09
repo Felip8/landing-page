@@ -9,6 +9,8 @@ import Hero from "../Components/Hero";
 import Solution from "../Components/Solution";
 import Testimonials from "../Components/Testimonials";
 import Planos from "../Components/Planos";
+import Contato from "../Components/Contato";
+import Footer from "../Components/footer";
 
 export default function Home() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -112,6 +114,8 @@ export default function Home() {
       <Solution />
       <Testimonials />
       <Planos />
+      <Contato />
+      <Footer />
     </>
   );
 }

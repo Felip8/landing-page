@@ -2,7 +2,7 @@ import "../styles/contato.css";
 
 export default function Formulario() {
   return (
-    <div className="container formulario">
+    <div id="contact" className="container formulario">
       {/*useio dois nomes pra não ferrar o tamanho padrao do container */}
       <div className="container-formulario">
         <p>Envie sua dúvida</p>
