@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Logo from "../assets/logo.svg";
 import Button from "./Button";
 import Close from "../assets/close.svg";
-import Menu from "../assets/icon.svg";
+import Menu from "../assets/menu.svg";
 
 export default function Header() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
