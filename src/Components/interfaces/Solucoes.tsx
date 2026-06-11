@@ -20,7 +20,7 @@ export const listaDeSolucoes: ISolucoes[] = [
   {
     id: 2,
     imagem: Bone,
-    titulo: "Acessórios, Brinquedos e Conforto",
+    titulo: "Brinquedos e Conforto",
     conteudo:
       "Garanta o bem-estar e a diversão do seu pet. Contamos com uma linha completa de casinhas confortáveis, bebedouros práticos e brinquedos interativos desenvolvidos para gastar energia, reduzir o estresse e estimular o desenvolvimento saudável.",
   },

@@ -17,7 +17,7 @@ export default function Formulario() {
         <input type="email" name="" id="" placeholder="Seu melhor Email" />
         <input
           type="text"
-          placeholder="Motivo do contato. Ex: Gostei muito do plano X, poderia me dar um orçamento?"
+          placeholder="Motivo do contato. Ex: Gostei muito do produto X, poderia me dar um orçamento?"
         />
       </div>
       <button className="btn-primary enviar">Enviar</button>

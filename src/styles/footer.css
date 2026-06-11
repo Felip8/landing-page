@@ -1,4 +1,5 @@
 footer {
+  text-align: center;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -62,4 +63,20 @@ footer a:hover {
   .svgs {
     justify-content: center;
   }
+}
+
+.logo-e-redes-sociais {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgs {
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin-top: 15px;
+  justify-content: center;
 }
