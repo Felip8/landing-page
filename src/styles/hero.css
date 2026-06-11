@@ -63,7 +63,7 @@
 }
 
 #hero .content p:first-of-type {
-  color: var(#064e3b);
+  color: #064e3b;
   font-weight: var(--fw-bold);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   text-shadow:
