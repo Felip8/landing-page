@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Logo from "../assets/logo.svg";
+import Logo from "../assets/logo.png";
 import Button from "./Button";
 import Close from "../assets/close.svg";
 import Menu from "../assets/menu.svg";
@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="container py-sm">
       <nav className="flex items-center justify-between">
-        <img src={Logo} alt="Logo DonaFrost" width={220} height={80} />
+        <img src={Logo} alt="Logo DonaFrost" width={260} height={120} />
         <div className="desktop-only">
           <ul className="flex gap-1">
             <li>

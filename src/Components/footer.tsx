@@ -1,10 +1,11 @@
 import "../styles/footer.css";
+import Logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
     <footer>
       <nav className="redes">
-        <h3>FLUGZEUG</h3>
+        <img src={Logo} alt="Logo DonaFrost" width={300} height={160} />
         <ul className="svgs">
           <li>
             <a href="#">
