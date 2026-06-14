@@ -6,16 +6,22 @@ interface ContactPayload {
   message: string;
 }
 
-const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN ?? "";
+//configuação do CORS
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN ?? ""; //pega a URL do site
 
+//liberação dos acessos
 const corsHeaders = (origin: string) => ({
   "Access-Control-Allow-Origin": ALLOWED_ORIGIN || origin,
   "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 });
 
+//estrutura do handler
 const handler: Handler = async (event: HandlerEvent) => {
+  //desestruturação
   const origin = event.headers["origin"] ?? "";
+
+  //tratamento do método HTTP
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 204,
@@ -24,13 +30,17 @@ const handler: Handler = async (event: HandlerEvent) => {
     };
   }
 
+  //compara o valor E o tipo ao mesmo tempo
   if (event.httpMethod !== "POST") {
+    //se for estritamente diferente
     return {
       statusCode: 405,
       headers: corsHeaders(origin),
       body: JSON.stringify({ error: "Método não permitido." }),
     };
   }
+
+  //leitura e validação do body
   let payload: ContactPayload;
 
   try {
@@ -43,7 +53,7 @@ const handler: Handler = async (event: HandlerEvent) => {
     };
   }
 
-  const { email, message } = payload;
+  const { email, message } = payload; //payload.email ou payload.message
 
   if (!email?.trim() || !message?.trim()) {
     return {
@@ -61,6 +71,8 @@ const handler: Handler = async (event: HandlerEvent) => {
       body: JSON.stringify({ error: "E-mail inválido." }),
     };
   }
+
+  //Configuração do transporte SMTP do e-mail
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT ?? 587),
@@ -71,6 +83,7 @@ const handler: Handler = async (event: HandlerEvent) => {
     },
   });
   try {
+    //Envio do e-mail
     await transporter.sendMail({
       from: `<${process.env.SMTP_USER}>`,
       replyTo: email,
