@@ -1,9 +1,6 @@
 import "../styles/testimonials.css";
 import CardTestimonials from "./CardTestimonials";
-import {
-  listaDeTestemunhas,
-  type ITestemunhas,
-} from "./interfaces/Testemunhas";
+import { listaDeTestemunhas } from "./interfaces/Testemunhas";
 
 export default function Testimonials() {
   return (
