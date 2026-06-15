@@ -19,11 +19,25 @@ export default function Testimonials() {
           acompanhe abaixo os testemunhos de quem já comprou e aprovou.
         </p>
       </header>
-      <section className="carousel">
-        {listaDeTestemunhas.map((testemunhas: ITestemunhas) => (
-          <CardTestimonials key={testemunhas.id} testemunhas={testemunhas} />
-        ))}
-      </section>
+      <div className="carousel">
+        <div className="carousel-content">
+          {/* Primeira renderização da lista original */}
+          {listaDeTestemunhas.map((testemunhas) => (
+            <CardTestimonials
+              key={`orig-${testemunhas.id}`}
+              testemunhas={testemunhas}
+            />
+          ))}
+
+          {/* SEGUNDA RENDERIZAÇÃO (Os clones que criam a ilusão de infinito) */}
+          {listaDeTestemunhas.map((testemunhas) => (
+            <CardTestimonials
+              key={`clone-${testemunhas.id}`}
+              testemunhas={testemunhas}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

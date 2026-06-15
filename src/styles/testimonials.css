@@ -22,7 +22,8 @@
   }
   .carousel {
     display: flex;
-    width: 80%;
+    width: 100%;
+    overflow: hidden;
   }
   .carousel:hover {
     .carousel-content {
@@ -34,7 +35,7 @@
     display: flex;
     gap: 1.5rem;
     padding-right: 1.5rem;
-    animation: swipe 30000ms linear infinite;
+    animation: swipe 50000ms linear infinite;
   }
   .carousel-card {
     display: flex;
