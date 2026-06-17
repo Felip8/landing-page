@@ -25,7 +25,8 @@ export default function Testimonials() {
               testemunhas={testemunhas}
             />
           ))}
-
+        </div>
+        <div className="carousel-content">
           {/* SEGUNDA RENDERIZAÇÃO (Os clones que criam a ilusão de infinito) */}
           {listaDeTestemunhas.map((testemunhas) => (
             <CardTestimonials

@@ -18,7 +18,9 @@ export default function CardProdutos({ produtos }: ProdutosProps) {
         <p>{conteudo}</p>
       </span>
       <span className="price"></span>
-      <Button text="Pedir agora" key="premium" />
+      <div className="product-btn-wrapper">
+        <Button text="Pedir agora" />
+      </div>
     </div>
   );
 }

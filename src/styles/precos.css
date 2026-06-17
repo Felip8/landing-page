@@ -37,6 +37,7 @@
   box-shadow: rgba(58, 68, 78, 0.1) 0px 12px 24px;
   width: 100%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 #pricing .premium {
@@ -74,6 +75,16 @@
   color: var(--second-text-color);
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.product-btn-wrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+}
+
+.product-btn-wrapper > * {
+  width: 100%;
 }
 
 @media (width >= 768px) {

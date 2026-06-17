@@ -2,14 +2,15 @@ import type { Handler, HandlerEvent } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
 interface ContactPayload {
+  //oq é payload = json
   email: string;
   message: string;
 }
 
-//configuação do CORS
+//configuação do CORS = cross origin resource sharing
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN ?? ""; //pega a URL do site
 
-//liberação dos acessos
+//liberação dos acessos quando fazem a requisição para o backend
 const corsHeaders = (origin: string) => ({
   "Access-Control-Allow-Origin": ALLOWED_ORIGIN || origin,
   "Access-Control-Allow-Headers": "Content-Type",
@@ -44,7 +45,7 @@ const handler: Handler = async (event: HandlerEvent) => {
   let payload: ContactPayload;
 
   try {
-    payload = JSON.parse(event.body ?? "{}");
+    payload = JSON.parse(event.body ?? "{}"); //?? {} = caso o body chegue nulo vai previnir falhas
   } catch {
     return {
       statusCode: 400,
@@ -74,7 +75,7 @@ const handler: Handler = async (event: HandlerEvent) => {
 
   //Configuração do transporte SMTP do e-mail
   const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
+    host: process.env.SMTP_HOST, //variaveis de ambiente
     port: Number(process.env.SMTP_PORT ?? 587),
     secure: process.env.SMTP_SECURE === "true",
     auth: {
