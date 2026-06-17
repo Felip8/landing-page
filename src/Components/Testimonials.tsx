@@ -18,7 +18,7 @@ export default function Testimonials() {
       </header>
       <div className="carousel">
         <div className="carousel-content">
-          {/* Primeira renderização da lista original */}
+          {/* primeira renderização da lista original */}
           {listaDeTestemunhas.map((testemunhas) => (
             <CardTestimonials
               key={`orig-${testemunhas.id}`}

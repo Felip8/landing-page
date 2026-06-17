@@ -1,5 +1,5 @@
 import Star from "../assets/star.svg";
-import StarEmpty from "../assets/star2.svg"; // Importe o SVG da estrela vazia
+import StarEmpty from "../assets/star2.svg";
 import { type ITestemunhas } from "./interfaces/Testemunhas";
 
 interface TestemunhaProps {
@@ -7,12 +7,10 @@ interface TestemunhaProps {
 }
 
 export default function CardTestimonials({ testemunhas }: TestemunhaProps) {
-  // Certifique-se de que "estrelas" está sendo mapeada do seu arquivo de interfaces/mock
   const { imagem, conteudo, nome, profissao, estrelas } = testemunhas;
 
-  // A matemática do seu professor aplicada aqui:
   const totalStars = 5;
-  const emptyStars = totalStars - (estrelas || 5); // Fallback para 5 caso o dado mude ou suma
+  const emptyStars = totalStars - (estrelas || 5);
 
   return (
     <div className="carousel-content">
@@ -22,20 +20,15 @@ export default function CardTestimonials({ testemunhas }: TestemunhaProps) {
           <p>{conteudo}</p>
         </span>
         <div className="flex gap-1 rating-stars">
-          {/* Loop para as estrelas cheias */}
+          {/* loop estrelas cheia */}
           {Array.from({ length: estrelas || 5 }).map((_, index) => (
-            <img
-              key={`full-${index}`}
-              src={Star}
-              alt="Estrela"
-              className="w-5 h-5"
-            />
+            <img key={index} src={Star} alt="Estrela" className="w-5 h-5" />
           ))}
 
-          {/* Loop para preencher o resto com estrelas vazias */}
+          {/* loop estrela vazia */}
           {Array.from({ length: emptyStars }).map((_, index) => (
             <img
-              key={`empty-${index}`}
+              key={index}
               src={StarEmpty}
               alt="Estrela Vazia"
               className="w-5 h-5"

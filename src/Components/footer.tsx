@@ -126,11 +126,7 @@ export default function Footer() {
           </ul>
         </nav>
       </div>
-
-      {/* Linha fina divisória */}
-      <hr className="footer-divider" />
-
-      {/* Seção inferior com o texto de copyright */}
+      <hr className="footer-divider" />s{" "}
       <div className="footer-bottom">
         <p>&copy; 2026 Agro & Pet Boiadeiro. Todos os direitos reservados.</p>
       </div>
